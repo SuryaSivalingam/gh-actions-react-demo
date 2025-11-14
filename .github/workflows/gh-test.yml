@@ -1,4 +1,4 @@
-name: gh-actions-test-workflow
+name: gh-actions-deploy-workflow
 on: push
 jobs:
   test-job:
@@ -14,3 +14,19 @@ jobs:
         run: npm ci
       - run: npm test
         name: Running node tests
+  deploy-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install node application
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' 
+      - name: Install node dependencies
+        run: npm ci
+      - name: Building the package
+        run: npm run build
+      - name: Deploying the package
+        run: Deploying...
+      
