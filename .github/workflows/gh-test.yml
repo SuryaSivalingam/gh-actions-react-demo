@@ -16,6 +16,7 @@ jobs:
         name: Running node tests
   deploy-job:
     runs-on: ubuntu-latest
+    needs: test-job
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
