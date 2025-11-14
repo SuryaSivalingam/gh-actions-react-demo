@@ -1,4 +1,4 @@
-name: gh-aactions-test-workflow
+name: gh-actions-test-workflow
 on: push
 jobs:
   test-job:
